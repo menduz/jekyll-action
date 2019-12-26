@@ -13,6 +13,8 @@ COPY LICENSE README.md /
 
 ENV BUNDLER_VERSION 1.17.3
 
+RUN apt-get update
+
 ### In this house we run utf8
 
 # Install program to configure locales
@@ -32,8 +34,7 @@ ENV LANGUAGE en_US.UTF-8
 
 ####
 
-RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
+RUN     apt-get install --no-install-recommends -y \
         bats \
         build-essential \
         ca-certificates \
